@@ -13,7 +13,7 @@ fi
 echo "Installing Python dependencies from requirements.txt (if any)..."
 pip install -r requirements.txt
 
-: ${PORT:=8000}
+: ${PORT:=5000}
 echo "Starting app on port $PORT"
 export FLASK_ENV=development
 export FLASK_RUN_PORT="$PORT"

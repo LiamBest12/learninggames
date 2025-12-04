@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
 
@@ -14,3 +14,9 @@ def home():
 @app.route("/username/<username>")
 def show_username(username):
     return f"Hello, {username}!"
+with app.test_request_context():
+    url_for("static", filename="login.html")
+@app.route("/login")
+def login():
+    return "Please log in to continue."
+
